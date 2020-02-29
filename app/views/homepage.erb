@@ -14,6 +14,8 @@
       <div>
          <% @messages.each do |message|%>
           <%= message.tweet %>
+          <%= message.created_at %> 
+          <br>
          <% end %>
       </div>
     <% else %>

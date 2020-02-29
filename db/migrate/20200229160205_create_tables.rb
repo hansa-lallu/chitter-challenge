@@ -9,7 +9,7 @@ class CreateTables < ActiveRecord::Migration[6.0]
 
     create_table :messages do |t|
       t.string :tweet
-      t.datetime :tweet_time
+      t.datetime :created_at
       t.belongs_to :user, foregin_key: true 
     end
   end 

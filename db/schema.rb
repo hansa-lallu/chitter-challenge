@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_160205) do
 
   create_table "messages", force: :cascade do |t|
     t.string "tweet"
-    t.datetime "tweet_time"
+    t.datetime "created_at"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end

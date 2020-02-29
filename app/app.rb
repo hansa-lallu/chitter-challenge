@@ -12,8 +12,9 @@ class Chitter < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @user = User.find_by(id: session[:id], username: session[:username])
-    @messages = Message.all
+    @user = User.find_by(id: session[:user_id], username: session[:username])
+    @messages = Message.joins(:user)
+    p @messages
     erb :homepage
   end
 
@@ -36,7 +37,7 @@ class Chitter < Sinatra::Base
 
   post '/validate_user' do 
     if (User.exists?(username: params["username"], password: params["password"]))
-      session[:id] = User.find_by(username: params["username"]).id
+      session[:user_id] = User.find_by(username: params["username"]).id
       session[:username] = params["username"]
       redirect '/'
     end
