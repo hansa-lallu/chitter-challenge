@@ -4,9 +4,6 @@ require_relative './models/user'
 require_relative './models/message'
 require 'bcrypt'
 
-
-# set :database, "postgres:chitter-challenge.postgres"
-
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'chitter')
 
 class Chitter < Sinatra::Base 
@@ -14,8 +11,6 @@ class Chitter < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @users = User.all
-    @messgaes = Message.all
     erb :homepage
   end
 
@@ -33,6 +28,15 @@ class Chitter < Sinatra::Base
 
   get '/login' do
     erb :login
+  end
+
+  post '/validate_user' do 
+    @user = (User.find_by id: session[:user_id])
+    if @user
+      redirect '/peeps'
+    else 
+      erb :homepage
+    end
   end
 
 end

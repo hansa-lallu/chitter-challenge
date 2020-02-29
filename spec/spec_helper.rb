@@ -5,6 +5,7 @@ require 'rspec'
 require "capybara/rspec"
 require "sinatra/activerecord"
 require_relative "../app/app"
+require "features/web_helper_spec.rb"
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
