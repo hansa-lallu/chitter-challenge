@@ -1,19 +1,17 @@
 source 'https://rubygems.org'
 
-  gem 'activerecord'
-  gem 'sinatra-activerecord'
-  gem 'rake'
-  gem 'rack'
-  gem 'selenium-webdriver'
-  gem 'bcrypt'
+gem 'activerecord'
+gem 'bcrypt'
+gem 'rack'
+gem 'rake'
+gem 'selenium-webdriver'
+gem 'sinatra-activerecord'
 
 group :test do
+  gem 'capybara'
+  gem 'pg'
   gem 'rspec'
   gem 'rubocop', '0.71.0'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem 'capybara'
-  gem 'pg'
 end
-
-

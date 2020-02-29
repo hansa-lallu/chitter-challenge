@@ -4,7 +4,6 @@ require_relative './models/user'
 require_relative './models/message'
 require 'bcrypt'
 
-
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'chitter')
 
 class Chitter < Sinatra::Base 
@@ -13,7 +12,7 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @user = User.find_by(id: session[:user_id], username: session[:username])
-    @messages = Message.order(created_at: :desc)
+    @messages = Message.joins(:user).order(created_at: :desc)
     p @messages
     erb :homepage
   end
@@ -36,7 +35,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/validate_user' do 
-    if (User.exists?(username: params["username"], password: params["password"]))
+    if User.exists?(username: params["username"], password: params["password"])
       session[:user_id] = User.find_by(username: params["username"]).id
       session[:username] = params["username"]
       redirect '/'
@@ -54,4 +53,3 @@ class Chitter < Sinatra::Base
   end
 
 end
-

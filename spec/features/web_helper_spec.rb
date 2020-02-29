@@ -1,6 +1,6 @@
 def sign_up
-  visit ('/')
-  click_link('Sign Up')
+  visit '/'
+  click_link 'Sign Up'
   expect(page).to have_content('Please enter your details')
   fill_in 'new_user_name', with: "Chandler Bing"
   fill_in 'new_user_username', with: "Mr Bing"
