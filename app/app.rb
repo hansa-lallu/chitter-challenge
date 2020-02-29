@@ -8,7 +8,15 @@ ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'Chitte
 class Chitter < Sinatra::Base 
 
   get '/' do
-    erb :index
+    erb :homepage
+  end
+
+  get '/sign_up' do
+    erb :sign_up
+  end
+
+  post '/add_user' do
+  
   end
 
 end
