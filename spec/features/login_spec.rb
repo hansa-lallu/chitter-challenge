@@ -5,4 +5,12 @@ feature 'user can log in' do
     log_in
     expect(page).to have_content('The latest from Makers')
   end
+
+  scenario 'user can return to homepage' do 
+    visit('/')
+    sign_up
+    click_link ("Return to Homepage")
+    expect(page).to have_content('Welcome to Chitter!')
+  end
+ 
 end
