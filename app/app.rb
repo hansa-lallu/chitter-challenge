@@ -2,7 +2,6 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require_relative './models/user'
 require_relative './models/message'
-require 'bcrypt'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'chitter')
 

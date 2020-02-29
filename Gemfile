@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'activerecord'
-gem 'bcrypt'
 gem 'rack'
 gem 'rake'
 gem 'selenium-webdriver'
