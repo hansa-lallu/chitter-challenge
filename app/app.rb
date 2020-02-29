@@ -13,7 +13,7 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @user = User.find_by(id: session[:user_id], username: session[:username])
-    @messages = Message.joins(:user)
+    @messages = Message.order(created_at: :desc)
     p @messages
     erb :homepage
   end
