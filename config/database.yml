@@ -6,9 +6,9 @@ default: &default
 
 development:
   <<: *default
-  database: chitters
+  database: chitter
 
 test: &test
   <<: *default
-  database: chitters_test
+  database: chitter_test
 
