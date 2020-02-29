@@ -9,7 +9,7 @@ feature 'user can add a peep' do
     expect(page).to have_content("Ping pong in 5")
   end
 
-  scenario 'ordered in reverse chronological order' do
+  scenario 'shows multiple peeps' do
     sign_up
     log_in
     expect(current_path).to eq '/'
