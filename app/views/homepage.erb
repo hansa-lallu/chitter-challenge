@@ -1,14 +1,38 @@
 <html>
-  <div>
-    <h1>Welcome to Chitter!</h1>
-  </div>
-  <div>
-    <a id="button" href="/sign_up">Sign Up</a>
-    <a id="button" href="/login">Login</a>
-  </div>
   <body>
-    <div> 
-      <h2>The latest from Makers</h2>
-    </div>
-  </body>
-</html>
+    <% if @user.nil? %>
+      <div>
+        <h1>Welcome to Chitter!</h1>
+      </div>
+      <div>
+        <a id="button" href="/sign_up">Sign Up</a>
+        <a id="button" href="/login">Login</a>
+      </div>
+      <div> 
+        <h2>The latest from Makers</h2>
+        <%=@message%>
+      </div>
+    <% else %>
+      <div>
+        <h1>Welcome to Chitter!</h1>
+      </div>
+      <div>
+        <h2>Create a Peep</h2>
+      </div>
+      <div>
+          <form action="/add_peep" method="post">
+            <input type="text" name="content" />
+            <input id="button" type="submit" value="Peep!" />
+          </form>
+      </div>
+      <div> 
+        <h2>The latest from Makers</h2>
+      </div>
+         <% @messages.each do |message|%>
+          <%= message.tweet %>
+         <% end %>
+      <div>
+      </div>
+    <% end %>
+</body>
+</html> 

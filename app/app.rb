@@ -4,6 +4,7 @@ require_relative './models/user'
 require_relative './models/message'
 require 'bcrypt'
 
+
 ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'chitter')
 
 class Chitter < Sinatra::Base 
@@ -11,6 +12,8 @@ class Chitter < Sinatra::Base
   enable :sessions
 
   get '/' do
+    @user = User.find_by(id: session[:id], username: session[:username])
+    @messages = Message.all
     erb :homepage
   end
 
@@ -19,7 +22,8 @@ class Chitter < Sinatra::Base
   end
 
   post '/add_user' do
-    new_user = User.create(name: params["new_user_name"],
+    puts params
+    user = User.create(name: params["new_user_name"],
                            username: params["new_user_username"],
                            email: params["new_user_email"],
                            password: params["new_user_password"])
@@ -31,12 +35,16 @@ class Chitter < Sinatra::Base
   end
 
   post '/validate_user' do 
-    @user = (User.find_by id: session[:user_id])
-    if @user
-      redirect '/peeps'
-    else 
-      erb :homepage
+    if (User.exists?(username: params["username"], password: params["password"]))
+      session[:id] = User.find_by(username: params["username"]).id
+      session[:username] = params["username"]
+      redirect '/'
     end
+  end
+
+  post '/add_peep' do
+    message = Message.create(tweet: params["content"], user_id: session[:user_id])
+    redirect '/'
   end
 
 end

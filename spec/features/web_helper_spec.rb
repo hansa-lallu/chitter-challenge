@@ -8,3 +8,9 @@ def sign_up
   fill_in 'new_user_password', with: "chicken"
   click_button 'Sign up!'
 end
+
+def log_in
+  fill_in 'username', with: "Mr Bing"
+  fill_in 'password', with: "chicken"
+  click_button 'Login!'
+end
