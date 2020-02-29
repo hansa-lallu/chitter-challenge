@@ -48,5 +48,10 @@ class Chitter < Sinatra::Base
     redirect '/'
   end
 
+  get '/sessions/destroy' do
+    session.clear
+    redirect '/'
+  end
+
 end
 
