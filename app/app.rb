@@ -12,8 +12,7 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @user = User.find_by(id: session[:user_id], username: session[:username])
-    @messages = Message.joins(:user).order(created_at: :desc)
-    p @messages
+    @messages = Message.joins(:user).select("messages.tweet,messages.created_at,users.username").order(created_at: :desc)
     erb :homepage
   end
 
@@ -24,9 +23,9 @@ class Chitter < Sinatra::Base
   post '/add_user' do
     puts params
     user = User.create(name: params["new_user_name"],
-                           username: params["new_user_username"],
-                           email: params["new_user_email"],
-                           password: params["new_user_password"])
+                       username: params["new_user_username"],
+                       email: params["new_user_email"],
+                       password: params["new_user_password"])
     redirect '/login'
   end
 
