@@ -5,7 +5,6 @@ source 'https://rubygems.org'
   gem 'rake'
   gem 'rack'
   gem 'selenium-webdriver'
-  gem 'standalone_migrations'
   gem 'bcrypt'
 
 group :test do
