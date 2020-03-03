@@ -1,0 +1,49 @@
+
+
+body {
+  font-family: "Verdana", Times, serif;
+  background: #ff9966;  
+  background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  
+  background: linear-gradient(to right, #ff5e62, #ff9966); 
+  
+}
+
+h1 {
+  color: rgb(110, 7, 7);
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  text-align: left;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
