@@ -1,16 +1,23 @@
-
-
-body {
-  font-family: "Verdana", Times, serif;
-  background: #ff9966;  
-  background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  
-  background: linear-gradient(to right, #ff5e62, #ff9966); 
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: rgb(110, 7, 7);
+body {
+  background: rgb(53, 179, 211); 
+  font-family: sans-serif;
+}
+
+header {
+  background: white;
+  padding: 20px;
+}
+
+header > h1 {
+  color: rgb(20, 102, 179);
   text-align: center;
+  font-size: 50;
 }
 
 h2 {
@@ -18,21 +25,29 @@ h2 {
   text-align: center;
 }
 
-h3 {
-  color: black;
-  text-align: left;
+.peeps-board {
+  margin: 50px auto;
+  border: 3px solid white;
+  border-radius: 30px;
+  text-align: center;
+  width: 700px;
+  color: rgb(7, 68, 87);
+  font-size: 20px;
+  padding: 80px, 80px;
+  font-family: sans-serif;
 }
+
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(53, 179, 211);
 }
 
 li {
-  float: left;
+  float: right;
 }
 
 li a {
@@ -45,5 +60,5 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: rgb(20, 102, 179);
 }

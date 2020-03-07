@@ -37,6 +37,8 @@ class Chitter < Sinatra::Base
       session[:user_id] = User.find_by(username: params["username"]).id
       session[:username] = params["username"]
       redirect '/'
+    else
+      redirect 'sign_up'
     end
   end
 

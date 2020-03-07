@@ -1,40 +1,54 @@
 <html>
- <head>
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <head>
     <title>Chitter</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css"> 
   </head>
   <body>
+
     <% if @user.nil? %>
+
       <div>
         <ul>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="/sign_up">Sign up</a></li>
-          <li><a href="/login">Login</a></li>
-      </ul>   
-        <h1>Welcome to Chitter!</h1>
+          <li><a id="sign-up" href="/sign_up">Sign Up</a></li>
+          <li><a id="login" href="/login">Login</a></li>
+        </ul>  
       </div>
-      <div>
+
+      <header> 
+        <h1>Welcome to Chitter!</h1>
+      </header> 
+
+      <%# <div>
         <a id="button" href="/sign_up">Sign Up</a>
         <a id="button" href="/login">Login</a>
-      </div>
-      <div> 
+      </div> %>
+
+      <div class="peeps-board">
         <h2>The latest from Makers</h2>
-      </div>
-      <div>
-         <% @messages.each do |message|%>
-          <%= message.tweet %>
-          <%= message.created_at %> 
-          <%= message.username %> 
-          <br>
-         <% end %>
-      </div>
+        <div>
+          <% @messages.each do |message|%>
+            <%= message.tweet %>
+            <%= message.created_at %> 
+            <%= message.username %> 
+            <br>
+          <% end %>
+        </div>
+      </div>  
+
+
     <% else %>
-      <div>
-        <h1>Chitter</h1>
+       <div>
+        <ul>
+          <li><a id="logout" href="/sessions/destroy">Logout</a></li>
+        </ul>  
       </div>
-      <div>
+      <header> 
+        <h1>Chitter!</h1>
+      </header> 
+      <%# <div>
         <a id="button" href="/sessions/destroy">Logout</a>
-      </div>
+      </div> %>
       <div>
         <h3>Create a Peep</h3>
       </div>
@@ -44,17 +58,17 @@
             <input id="button" type="submit" value="Peep!" />
           </form>
       </div>
-      <div> 
+        <div class="peeps-board">
         <h2>The latest from Makers</h2>
-      </div>
-         <% @messages.each do |message|%>
-          <%= message.tweet %>
-          <%= message.created_at %> 
-          <%= message.username %> 
-          <br>
-         <% end %>
-      <div>
-      </div>
+        <div>
+          <% @messages.each do |message|%>
+            <%= message.tweet %>
+            <%= message.created_at %> 
+            <%= message.username %> 
+            <br>
+          <% end %>
+        </div>
+      </div>  
     <% end %>
 </body>
 </html> 
