@@ -1,74 +1,71 @@
 <html>
+
   <head>
     <title>Chitter</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../style.css"> 
   </head>
-  <body>
 
-    <% if @user.nil? %>
+    <body>
 
-      <div>
-        <ul>
-          <li><a id="sign-up" href="/sign_up">Sign Up</a></li>
-          <li><a id="login" href="/login">Login</a></li>
-        </ul>  
-      </div>
+      <% if @user.nil? %>
 
-      <header> 
-        <h1>Welcome to Chitter!</h1>
-      </header> 
-
-      <%# <div>
-        <a id="button" href="/sign_up">Sign Up</a>
-        <a id="button" href="/login">Login</a>
-      </div> %>
-
-      <div class="peeps-board">
-        <h2>The latest from Makers</h2>
         <div>
-          <% @messages.each do |message|%>
-            <%= message.tweet %>
-            <%= message.created_at %> 
-            <%= message.username %> 
-            <br>
-          <% end %>
+          <ul>
+            <li><a id="sign-up" href="/sign_up">Sign Up</a></li>
+            <li><a id="login" href="/login">Login</a></li>
+          </ul>  
         </div>
-      </div>  
 
+        <header> 
+          <h1>Welcome to Chitter!</h1>
+        </header> 
 
-    <% else %>
-       <div>
-        <ul>
-          <li><a id="logout" href="/sessions/destroy">Logout</a></li>
-        </ul>  
-      </div>
-      <header> 
-        <h1>Chitter!</h1>
-      </header> 
-      <%# <div>
-        <a id="button" href="/sessions/destroy">Logout</a>
-      </div> %>
-      <div>
-        <h3>Create a Peep</h3>
-      </div>
-      <div>
+        <div class="peeps-board">
+          <h2>The latest from Makers</h2>
+          <div>
+            <% @messages.each do |message|%>
+              <%= message.tweet %>
+              <%= message.created_at %> 
+              <%= message.username %> 
+              <br>
+            <% end %>
+          </div>
+        </div>  
+
+      <% else %>
+        <div>
+          <ul>
+            <li><a id="logout" href="/sessions/destroy">Logout</a></li>
+          </ul>  
+        </div>
+
+        <header> 
+          <h1>Chitter!</h1>
+        </header> 
+
+        <div>
+          <h3>Create a Peep</h3>
+        </div>
+
+        <div>
           <form action="/add_peep" method="post">
             <input type="text" name="content" />
             <input id="button" type="submit" value="Peep!" />
           </form>
-      </div>
-        <div class="peeps-board">
-        <h2>The latest from Makers</h2>
-        <div>
-          <% @messages.each do |message|%>
-            <%= message.tweet %>
-            <%= message.created_at %> 
-            <%= message.username %> 
-            <br>
-          <% end %>
         </div>
-      </div>  
-    <% end %>
-</body>
+
+        <div class="peeps-board">
+          <h2>The latest from Makers</h2>
+          <div>
+            <% @messages.each do |message|%>
+              <%= message.tweet %>
+              <%= message.created_at %> 
+              <%= message.username %> 
+              <br>
+            <% end %>
+          </div>
+        </div>  
+      <% end %>
+  </body>
 </html> 

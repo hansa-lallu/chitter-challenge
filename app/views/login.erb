@@ -3,26 +3,29 @@
   <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Chitter</title>
   </head>
-  <body>
-   <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/sign_up">Sign up</a></li>
-  </ul>  
-  <header> 
-        <h1>Welcome to Chitter!</h1>
-  </header> 
-  <div>
-    <h3>Please Login!</h3>
-  </div>
-    <div> 
-      <form action="/validate_user" method="POST">
-        <input type="text" name="username" placeholder="Username" />
-        <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="Login" />
-      </form>
-    </div>
-    <%# <div>
-     <a id="button" href="/">Return to Homepage</a>
-    </div> %>
-  </body>
+
+    <body>
+
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sign_up">Sign up</a></li>
+      </ul>  
+
+      <header> 
+            <h1>Welcome to Chitter!</h1>
+      </header> 
+
+      <div>
+        <h3>Please Login!</h3>
+      </div>
+
+      <div> 
+        <form action="/validate_user" method="POST">
+          <input type="text" name="username" placeholder="Username" />
+          <input type="password" name="password" placeholder="Password" />
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+      
+    </body>
 </html>
