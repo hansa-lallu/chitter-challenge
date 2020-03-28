@@ -1,13 +1,13 @@
 # Chitter Challenge
-=================
+
 
 ## Challenge:
--------
+
 
 Write a small Twitter clone that will allow the users to post messages to a public stream.
 
 ## User Stories
--------
+
 
 ```
 STRAIGHT UP
@@ -44,8 +44,7 @@ As a Maker
 So that I can stay constantly tapped in to the shouty box of Chitter
 I want to receive an email if I am tagged in a Peep
 ```
-# Functionality:
-------
+## Functionality:
 
 * You don't have to be logged in to see the peeps.
 * Makers sign up to chitter with their email, password, name and a username (e.g. samm@makersacademy.com, password123, Sam Morgan, sjmog).
@@ -87,7 +86,7 @@ I want to receive an email if I am tagged in a Peep
 - run `rspec` in your command line
 
 
-# Project Status
+## Project Status
 - Further implementations include completing advanced user story above. 
 - Reply to a peep form another maker in order to start a conversation 
 - Improve CSS 
