@@ -1,12 +1,12 @@
-Chitter Challenge
+# Chitter Challenge
 =================
 
-Challenge:
+## Challenge:
 -------
 
 Write a small Twitter clone that will allow the users to post messages to a public stream.
 
-Features:
+## User Stories
 -------
 
 ```
@@ -44,22 +44,7 @@ As a Maker
 So that I can stay constantly tapped in to the shouty box of Chitter
 I want to receive an email if I am tagged in a Peep
 ```
-
-Technical Approach:
------
-
-- ActiveRecord ORM
-
-Some useful resources:
-**DataMapper**
-- [DataMapper ORM](https://datamapper.org/)
-- [Sinatra, PostgreSQL & DataMapper recipe](http://recipes.sinatrarb.com/p/databases/postgresql-datamapper)
-
-**ActiveRecord**
-- [ActiveRecord ORM](https://guides.rubyonrails.org/active_record_basics.html)
-- [Sinatra, PostgreSQL & ActiveRecord recipe](http://recipes.sinatrarb.com/p/databases/postgresql-activerecord?#article)
-
-Notes on functionality:
+# Functionality:
 ------
 
 * You don't have to be logged in to see the peeps.
@@ -68,38 +53,43 @@ Notes on functionality:
 * Peeps (posts to chitter) have the name of the maker and their user handle.
 * Your README should indicate the technologies used, and give instructions on how to install and run the tests.
 
-Bonus:
------
+## Getting Started ##
 
-If you have time you can implement the following:
+- Fork this repo, and clone to your local machine.
+- Change into the directory `cd chitter-challenge`
+- Run the command  `gem install bundle` (if you don't have bundle already)
+- When the installation completes, run `bundle`
+- run `rake db:create`
+- run `rake db:migrte`
+- run command `rackup -p 4567` in your terminal
+- visit http://localhost:4567/
 
-* In order to start a conversation as a maker I want to reply to a peep from another maker.
+## Usage 
 
-And/Or:
+![Chitter](/images/Home.png "Home")
+![Chitter](/images/Login.png "Login")
+![Chitter](/images/Loggedin.png "Loggedin")
 
-* Work on the CSS to make it look good.
 
-Good luck and let the chitter begin!
+## Tech Used ##
+- Ruby
+- RSpec
+- Capybara
+- ActiveRecord ORM
+- Postgre SQL
+- CSS
+- HTML
+- Sinatra
 
-Code Review
------------
+## Testing ##
 
-In code review we'll be hoping to see:
+- Navigate to the top level of the directory
+- run `rspec` in your command line
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-Automated Tests:
------
-
-Opening a pull request against this repository will will trigger Travis CI to perform a build of your application and run your full suite of RSpec tests. If any of your tests rely on a connection with your database - and they should - this is likely to cause a problem. The build of your application created by has no connection to the local database you will have created on your machine, so when your tests try to interact with it they'll be unable to do so and will fail.
-
-If you want a green tick against your pull request you'll need to configure Travis' build process by adding the necessary steps for creating your database to the `.travis.yml` file.
-
-- [Travis Basics](https://docs.travis-ci.com/user/tutorial/)
-- [Travis - Setting up Databases](https://docs.travis-ci.com/user/database-setup/)
+# Project Status
+- Further implementations include completing advanced user story above. 
+- Reply to a peep form another maker in order to start a conversation 
+- Improve CSS 
 
 
